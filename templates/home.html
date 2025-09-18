@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canciones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Canciones</h1>
+        <p class="question">¿Qué soy?</p>
+
+        <div class="buttons-container">
+            <!-- RUTA CORREGIDA: Apunta a la función 'login' con el tipo de usuario -->
+            <a href="{{ url_for('login', user_type='comprador') }}" class="button">Comprador</a>
+            <a href="{{ url_for('login', user_type='vendedor') }}" class="button">Vendedor</a>
+        </div>
+    </div>
+
+</body>
+</html>
+

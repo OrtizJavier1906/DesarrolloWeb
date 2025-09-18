@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Iniciar Sesión como {{ user_type.capitalize() }}</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('login', user_type=user_type) }}" method="POST">
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+            <button type="submit" class="btn">Iniciar Sesión</button>
+        </form>
+
+        <div class="register-link">
+            <p>¿No tienes una cuenta?</p>
+            {% if user_type == 'comprador' %}
+                <a href="{{ url_for('registroC') }}" class="btn-secondary">Regístrate aquí</a>
+            {% else %}
+                <a href="{{ url_for('registroV') }}" class="btn-secondary">Regístrate aquí</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
