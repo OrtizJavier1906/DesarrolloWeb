@@ -9,13 +9,12 @@
 <body>
 
     <div class="container">
-        <h1>Canciones</h1>
-        <p class="question">¿Qué soy?</p>
+        <h1>SongStock</h1>
+        <p class="question">Bienvenido a SongStock MarketPlace</p>
 
         <div class="buttons-container">
-            <!-- RUTA CORREGIDA: Apunta a la función 'login' con el tipo de usuario -->
-            <a href="{{ url_for('login', user_type='comprador') }}" class="button">Comprador</a>
-            <a href="{{ url_for('login', user_type='vendedor') }}" class="button">Vendedor</a>
+            <a href="{{ url_for('login') }}" class="button">Iniciar Sesión</a>
+            <a href="{{ url_for('registro') }}" class="button">Registrarse</a>
         </div>
     </div>
 

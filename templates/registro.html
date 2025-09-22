@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Vendedor</title>
+    <title>Registro de usuario</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='registro.css') }}">
 </head>
 <body>
 
     <div class="container">
-        <h1>Crear una cuenta de Vendedor</h1>
+        <h1>Crear una cuenta en SongStock</h1>
         
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
@@ -19,7 +19,7 @@
           {% endif %}
         {% endwith %}
 
-        <form action="{{ url_for('registroV') }}" method="POST">
+        <form action="{{ url_for('registro') }}" method="POST">
             <div class="form-group">
                 <label for="nombres">Nombres:</label>
                 <input type="text" id="nombres" name="nombres" required>
@@ -50,3 +50,4 @@
 
 </body>
 </html>
+

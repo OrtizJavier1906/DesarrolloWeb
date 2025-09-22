@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conviértete en Vendedor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='registro.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registra tu primer vinilo para vender</h1>
+        <p>Completa los datos del álbum que quieres poner a la venta.</p>
+
+        <form action="{{ url_for('servendedor') }}" method="POST">
+            <div class="form-group">
+                <label for="nombre_album">Nombre del Álbum:</label>
+                <input type="text" id="nombre_album" name="nombre_album" required>
+            </div>
+            <div class="form-group">
+                <label for="artista">Artista:</label>
+                <input type="text" id="artista" name="artista" required>
+            </div>
+            <div class="form-group">
+                <label for="genero">Género:</label>
+                <input type="text" id="genero" name="genero" required>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio (COP):</label>
+                <input type="number" step="1" id="precio" name="precio" required>
+            </div>
+            <div class="form-group">
+                <label for="cantidad">Cantidad disponible:</label>
+                <input type="number" id="cantidad" name="cantidad" required>
+            </div>
+            <button type="submit" class="btn">Poner en Venta</button>
+        </form>
+    </div>
+</body>
+</html>
